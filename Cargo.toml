@@ -1,0 +1,13 @@
+[package]
+name = "lost-metrics-sniffer-stub"
+description = ""
+authors = ["averageeucplayer"]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+
+[dependencies]
+anyhow = "1.0.75"
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+bincode = "2.0.1"
