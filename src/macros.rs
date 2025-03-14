@@ -8,6 +8,14 @@ macro_rules! impl_new_default {
     ($($struct_name:ident),*) => {
         $(
             impl $struct_name {
+                pub fn encode(&self) -> anyhow::Result<Vec<u8>>
+                    where
+                        Self: bincode::de::Decode<()>,
+                    {
+                        let data = bincode::encode_to_vec(self, CONFIG)?;
+                        Ok(data)
+                    }
+
                 pub fn new(data: &[u8]) -> anyhow::Result<Self>
                 where
                     Self: bincode::de::Decode<()>,
@@ -55,18 +63,18 @@ impl_new_default!(
 #[cfg(test)]
 mod tests {
     use super::*;
-    use bincode::{encode_to_vec, decode_from_slice};
+    use bincode::decode_from_slice;
     use bincode::config::Configuration;
 
     static CONFIG: Configuration = bincode::config::standard();
     
-    macro_rules! test_serialization {
+    macro_rules! test_serialization_and_deserialization {
         ($($struct_name:ident),*) => {
             $(
                 #[test]
                 fn $struct_name() {
                     let original = $struct_name::default();
-                    let encoded = encode_to_vec(&original, CONFIG).expect("Serialization failed");
+                    let encoded = original.encode().expect("Serialization failed");
                     let (decoded, _): ($struct_name, _) = 
                         decode_from_slice(&encoded, CONFIG).expect("Deserialization failed");
                 }
@@ -74,7 +82,7 @@ mod tests {
         };
     }
 
-    test_serialization!(
+    test_serialization_and_deserialization!(
         PKTPartyStatusEffectAddNotify,
         PKTPartyStatusEffectRemoveNotify,
         PKTPartyStatusEffectResultNotify,
