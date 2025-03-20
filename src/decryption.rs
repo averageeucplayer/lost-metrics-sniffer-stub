@@ -1,24 +1,30 @@
 use crate::packets::structures::SkillDamageEvent;
 
-    pub struct DamageEncryptionHandler{}
-    pub struct DamageEncryptionHandlerInner{}
+pub trait DamageEncryptionHandlerTrait {
+    fn start(self) -> anyhow::Result<Box<Self>>;
+    fn decrypt_damage_event(&self, event: &mut SkillDamageEvent) -> bool;
+    fn update_zone_instance_id(&self, channel_id: u32);
+}
 
-    impl DamageEncryptionHandlerInner{
-        pub fn decrypt_damage_event(&self, event: &mut SkillDamageEvent) -> bool {
-            true
-        }
+pub struct DamageEncryptionHandler{}
 
-        pub fn update_zone_instance_id(&self, channel_id: u32) {
-
-        }
+impl DamageEncryptionHandlerTrait for DamageEncryptionHandler{
+   
+    fn start(self) -> anyhow::Result<Box<Self>> {
+        Ok(Box::new(self))
     }
 
-    impl DamageEncryptionHandler{
-        pub fn new() -> Self {
-            Self {}
-        }
-
-        pub fn start(&self) -> anyhow::Result<DamageEncryptionHandlerInner> {
-            Ok(DamageEncryptionHandlerInner {})
-        }
+    fn decrypt_damage_event(&self, event: &mut SkillDamageEvent) -> bool {
+        true
     }
+
+    fn update_zone_instance_id(&self, channel_id: u32) {
+
+    }
+}
+
+impl DamageEncryptionHandler {
+    pub fn new() -> Self {
+        Self {}
+    }
+}

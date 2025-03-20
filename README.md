@@ -1,5 +1,6 @@
 ![rustc](https://img.shields.io/badge/rustc-1.85.0-blue.svg)
 [![codecov](https://codecov.io/gh/averageeucplayer/lost-metrics-sniffer-stub/graph/badge.svg?token=HHRGYYUNM2)](https://codecov.io/gh/averageeucplayer/lost-metrics-sniffer-stub)
+![CI](https://github.com/averageeucplayer/lost-metrics-sniffer-stub/actions/workflows/ci.yml/badge.svg)
 
 # 🚧 Lost Metrics Sniffer Stub  
 
