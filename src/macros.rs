@@ -20,7 +20,8 @@ macro_rules! impl_new_default {
                 where
                     Self: bincode::de::Decode<()>,
                 {
-                    let (value, _): (Self, _) = bincode::decode_from_slice(data, CONFIG)?;
+                    let (value, _): (Self, _) = bincode::decode_from_slice(data, CONFIG)
+                        .map_err(|err| anyhow::anyhow!("Error parsing: {}: {}", std::any::type_name::<Self>(), err))?;
                     Ok(value)
                 }
             }
