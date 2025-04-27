@@ -195,7 +195,6 @@ pub struct PKTStatusEffectAddNotify {
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTStatusEffectRemoveNotify {
     pub object_id: EntityId,
-    pub character_id: CharacterId,
     pub status_effect_instance_ids: Vec<StatusEffectInstanceId>,
     pub reason: u8
 }
