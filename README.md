@@ -20,5 +20,4 @@ git clone https://github.com/averageeucplayer/lost-metrics-sniffer-stub.git
 [dependencies]
 lost-metrics-sniffer-stub = { git = "https://github.com/averageeucplayer/lost-metrics-sniffer-stub" }
 lost-metrics-sniffer-stub = { git = "https://github.com/averageeucplayer/lost-metrics-sniffer-stub", branch="main" }
-lost-metrics-sniffer-stub = { git = "https://github.com/averageeucplayer/lost-metrics-sniffer-stub", tag="v1.0.0" }
 ```

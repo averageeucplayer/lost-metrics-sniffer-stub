@@ -1,5 +1,4 @@
-
-#![allow(unused_variables)]
+#![allow(warnings)]
 
 pub mod packets;
 pub mod decryption;

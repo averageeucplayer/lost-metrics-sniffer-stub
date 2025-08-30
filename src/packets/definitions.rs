@@ -4,6 +4,32 @@ use crate::types::*;
 use super::{common::SkillMoveOptionData, structures::*};
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct PKTSkillCooldownNotify {
+    pub source_id: u64,
+    pub skill_cooldown_struct: SkillCooldownStruct
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct PKTNewVehicleInnerInner {
+    pub p_c_struct: Option<PCStruct>
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct PKTZoneObjectUnpublishNotify {
+    pub object_id: u64
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct PKTNewVehicleInner {
+    pub sub_p_k_t_new_vehicle_2_2_397: PKTNewVehicleInnerInner
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct PKTNewVehicle {
+    pub vehicle_struct: PKTNewVehicleInner
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTCounterAttackNotify {
     pub source_id: u64
 }
@@ -211,11 +237,6 @@ pub struct PKTZoneMemberLoadStatusNotify {
 }
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
-pub struct PKTZoneObjectUnpublishNotify {
-    pub object_id: u64
-}
-
-#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTStatusEffectSyncDataNotify {
     pub object_id: EntityId,
     pub status_effect_instance_id: StatusEffectInstanceId,
@@ -233,22 +254,10 @@ pub struct PKTTroopMemberUpdateMinNotify {
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTNewTransit {
-    pub channel_id: u32
-}
-
-#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
-pub struct PKTNewPCInner {
-    pub player_id: EntityId,
-    pub name: String,
-    pub class_id: ClassId,
-    pub max_item_level: GearLevel,
-    pub character_id: CharacterId,
-    pub stat_pairs: Vec<StatPair>,
-    pub equip_item_datas: Vec<EquipItemData>,
-    pub status_effect_datas: Vec<StatusEffectData>
+    pub zone_instance_id: u32
 }
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTNewPC {
-    pub pc_struct: PKTNewPCInner
+    pub pc_struct: PCStruct
 }

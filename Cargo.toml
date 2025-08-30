@@ -1,14 +1,30 @@
 [package]
-name = "lost-metrics-sniffer-stub"
-description = ""
+name = "meter-core-fake"
+description = "Empty shell only meant to get project build"
 authors = ["averageeucplayer"]
 version = "0.1.0"
 edition = "2024"
-rust-version = "1.85"
+rust-version = "1.88"
 
 [dependencies]
 anyhow = "1.0.75"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-bincode = "2.0.1"
-once_cell = "1.20.2"
+bincode = { version = "2.0.1", features = ["alloc"] }
+"byteorder" = { version = "1.5.0" }
+"etherparse" = { version = "0.16.0" }
+ffi-opaque = "2.0.1"
+"hashbrown" = { version = "0.15.4" }
+ipnet = "2.11.0"
+lazy_static = "1.5.0"
+libc = "0.2.174"
+log = "0.4.27"
+lz4_flex = { version = "0.11.5" }
+snap = { version = "1.1.1" }
+socket2 = { version = "0.5.10" }
+sodiumoxide = { version = "0.2.7" }
+thiserror = { version = "1.0.69" }
+windows = { version = "0.48.0" }
+chrono = {  version = "0.4.41" }
+env_logger = { version = "0.11.8" }
+# windivert = { version = "0.6.0", optional = true }

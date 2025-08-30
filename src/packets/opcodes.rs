@@ -1,3 +1,4 @@
+#[repr(u8)]
 pub enum Pkt {
     CounterAttackNotify,
     DeathNotify,
@@ -6,6 +7,7 @@ pub enum Pkt {
     InitPC,
     NewPC,
     NewNpc,
+    NewVehicle,
     NewNpcSummon,
     NewProjectile,
     NewTrap,
@@ -15,6 +17,7 @@ pub enum Pkt {
     RemoveObject,
     SkillCastNotify,
     SkillStartNotify,
+    SkillCooldownNotify,
     SkillDamageAbnormalMoveNotify,
     SkillDamageNotify,
     PartyInfo,
