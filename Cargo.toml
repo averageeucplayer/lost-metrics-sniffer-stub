@@ -1,10 +1,10 @@
 [package]
-name = "meter-core-fake"
+name = "meter-core"
 description = "Empty shell only meant to get project build"
 authors = ["averageeucplayer"]
-version = "0.1.0"
+version = "1.33.10"
 edition = "2024"
-rust-version = "1.88"
+rust-version = "1.89"
 
 [dependencies]
 anyhow = "1.0.75"

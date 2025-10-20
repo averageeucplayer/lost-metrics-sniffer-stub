@@ -21,7 +21,7 @@ pub struct PKTZoneObjectUnpublishNotify {
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct PKTNewVehicleInner {
-    pub sub_p_k_t_new_vehicle_2_2_397: PKTNewVehicleInnerInner
+    pub p_c_struct_conditional: PKTNewVehicleInnerInner
 }
 
 #[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]

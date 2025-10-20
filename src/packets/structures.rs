@@ -82,8 +82,20 @@ pub struct SkillDamageEventShield {
     pub p64_0: Option<i64>
 }
 
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct SkillDamageEventRdps {
+    pub sub_p_k_t_skill_damage_abnormal_move_notify_5_5_23: Option<SkillDamageEventRdpsInner>
+}
 
-#[derive(Debug, Default, Encode, Decode, Serialize, Deserialize, Clone)]
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
+pub struct SkillDamageEventRdpsInner {
+    pub b_0: Vec<u8>,
+    pub u64_0: Vec<u64>,
+    pub p64_0: Vec<i64>,
+    pub u32_0: Vec<u32>
+}
+
+#[derive(Debug, Encode, Decode, Serialize, Deserialize, Default, Clone)]
 pub struct SkillDamageEvent {
     pub target_id: u64,
     pub damage: i64,
@@ -93,4 +105,6 @@ pub struct SkillDamageEvent {
     pub damage_attr: Option<u8>,
     pub damage_type: u8,
     pub shield_damage: SkillDamageEventShield,
+    pub u32_0: u32,
+    pub sub_p_k_t_skill_damage_abnormal_move_notify_4_2_24: SkillDamageEventRdps
 }
