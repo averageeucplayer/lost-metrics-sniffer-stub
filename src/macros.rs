@@ -92,15 +92,19 @@ impl_new_default!(
 mod tests {
     use super::*;
 
-    macro_rules! test_serialization {
+     macro_rules! test_serialization {
         ($($struct_name:ident),*) => {
             $(
                 #[test]
                 fn $struct_name() {
                     let original = $struct_name::default();
-                    let encoded = encode_to_vec(&original, CONFIG).expect("Serialization failed");
-                    let (decoded, _): ($struct_name, _) = 
-                        decode_from_slice(&encoded, CONFIG).expect("Deserialization failed");
+
+                    let encoded = serde_json::to_vec(&original)
+                        .expect("Serialization failed");
+
+                    let decoded: $struct_name = serde_json::from_slice(&encoded)
+                        .expect("Deserialization failed");
+
                 }
             )*
         };
