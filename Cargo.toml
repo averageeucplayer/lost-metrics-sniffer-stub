@@ -1,20 +1,28 @@
 [package]
 name = "meter-core"
-description = "Empty shell only meant to get project build"
+description = "Empty shell only meant to get loa-logs build"
+repository = "https://github.com/averageeucplayer/lost-metrics-sniffer-stub"
+categories = []
 authors = ["averageeucplayer"]
-version = "1.33.10"
+version = "1.37.2"
 edition = "2024"
-rust-version = "1.89"
+rust-version = "1.92"
+license = "MIT"
+
+[features]
+default = []
+bincode = ["dep:bincode"]
+serde = []
 
 [dependencies]
 anyhow = "1.0.75"
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-bincode = { version = "2.0.1", features = ["alloc"] }
-"byteorder" = { version = "1.5.0" }
-"etherparse" = { version = "0.16.0" }
+bincode = { version = "2.0.1", features = ["alloc"], optional = true }
+byteorder = { version = "1.5.0" }
+etherparse = { version = "0.16.0" }
 ffi-opaque = "2.0.1"
-"hashbrown" = { version = "0.15.4" }
+hashbrown = { version = "0.15.4" }
 ipnet = "2.11.0"
 lazy_static = "1.5.0"
 libc = "0.2.174"
@@ -27,4 +35,3 @@ thiserror = { version = "1.0.69" }
 windows = { version = "0.48.0" }
 chrono = {  version = "0.4.41" }
 env_logger = { version = "0.11.8" }
-# windivert = { version = "0.6.0", optional = true }

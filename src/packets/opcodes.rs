@@ -1,5 +1,7 @@
+#[derive(Debug, Copy, Clone)]
 #[repr(u8)]
 pub enum Pkt {
+    BattleItemUseNotify,
     CounterAttackNotify,
     DeathNotify,
     IdentityGaugeChangeNotify,
