@@ -1,3 +1,11 @@
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
+
+#[cfg(feature = "bincode")]
+use bincode::{Decode, Encode};
+
+#[cfg_attr(feature = "bincode", derive(Encode, Decode))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Copy, Clone)]
 #[repr(u8)]
 pub enum Pkt {

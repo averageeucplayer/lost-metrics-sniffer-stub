@@ -131,7 +131,7 @@ pub struct SkillDamageEventRdpsInner {
 pub struct SkillDamageEvent {
     pub target_id: u64,
     pub damage: i64,
-    pub modifier: i32,
+    pub modifier: u8,
     pub cur_hp: i64,
     pub max_hp: i64,
     pub damage_attr: Option<u8>,
