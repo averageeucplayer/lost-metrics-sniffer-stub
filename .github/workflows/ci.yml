@@ -23,6 +23,7 @@ jobs:
             target
           key: ${{ runner.os }}-cargo-${{ hashFiles('**/Cargo.lock') }}
 
+      - uses: dtolnay/rust-toolchain@1.94.0
       - name: Install cargo-llvm-cov
         continue-on-error: true
         uses: taiki-e/install-action@cargo-llvm-cov
