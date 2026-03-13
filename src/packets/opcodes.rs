@@ -30,6 +30,7 @@ pub enum Pkt {
     SkillCooldownNotify,
     SkillDamageAbnormalMoveNotify,
     SkillDamageNotify,
+    SupportCombatAnalyzerDataNotify,
     PartyInfo,
     PartyLeaveResult,
     PartyStatusEffectAddNotify,

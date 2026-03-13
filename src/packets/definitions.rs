@@ -15,7 +15,6 @@ pub struct PKTSkillCooldownNotify {
     pub skill_cooldown_struct: SkillCooldownStruct
 }
 
-
 #[cfg_attr(feature = "bincode", derive(Encode, Decode))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Default, Clone)]
@@ -235,6 +234,13 @@ pub struct PKTSkillDamageNotify {
     pub skill_damage_events: Vec<SkillDamageEvent>,
     pub skill_id: SkillId,
     pub skill_effect_id: Option<SkillEffectId>,
+}
+
+#[cfg_attr(feature = "bincode", derive(Encode, Decode))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Default, Clone)]
+pub struct PKTSupportCombatAnalyzerDataNotify {
+    pub events: Vec<SupportCombatAnalyzerEvent>
 }
 
 #[cfg_attr(feature = "bincode", derive(Encode, Decode))]

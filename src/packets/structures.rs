@@ -16,6 +16,17 @@ pub struct StatusEffectDataValue {
 #[cfg_attr(feature = "bincode", derive(Encode, Decode))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 #[derive(Debug, Default, Clone)]
+pub struct SupportCombatAnalyzerEvent {
+    pub event_type: u8,
+    pub skill_id: u32,
+    pub source_id: u64,
+    pub support_character_id: u64,
+    pub value: i64
+}
+
+#[cfg_attr(feature = "bincode", derive(Encode, Decode))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
+#[derive(Debug, Default, Clone)]
 pub struct SkillCooldownStructInner {
     pub has_stacks: u32,
     pub current_stack_cooldown: Option<f64>

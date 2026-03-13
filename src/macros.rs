@@ -85,7 +85,8 @@ impl_new_default!(
     PKTRemoveObject,
     PKTPartyInfo,
     PKTSkillDamageAbnormalMoveNotify,
-    PKTSkillDamageNotify
+    PKTSkillDamageNotify,
+    PKTSupportCombatAnalyzerDataNotify
 );
 
 #[cfg(all(test, feature = "serde"))]
@@ -139,7 +140,8 @@ mod tests {
         PKTRemoveObject,
         PKTPartyInfo,
         PKTSkillDamageAbnormalMoveNotify,
-        PKTSkillDamageNotify
+        PKTSkillDamageNotify,
+        PKTSupportCombatAnalyzerDataNotify
     );
 }
 

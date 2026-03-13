@@ -4,13 +4,13 @@ description = "Empty shell only meant to get loa-logs build"
 repository = "https://github.com/averageeucplayer/lost-metrics-sniffer-stub"
 categories = []
 authors = ["averageeucplayer"]
-version = "1.37.2"
+version = "1.40.2"
 edition = "2024"
-rust-version = "1.92"
+rust-version = "1.94"
 license = "MIT"
 
 [features]
-default = []
+default = ["serde"]
 bincode = ["dep:bincode"]
 serde = []
 
